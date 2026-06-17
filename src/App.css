@@ -1,0 +1,253 @@
+.todo-app {
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  text-align: left;
+}
+
+.todo-app h1 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 32px;
+}
+
+.todo-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text-h);
+  transition: border-color 0.2s;
+}
+
+.todo-input:focus,
+.todo-edit-input:focus {
+  outline: none;
+  border-color: var(--accent-border);
+}
+
+.todo-add-btn {
+  padding: 10px 18px;
+  font-size: 16px;
+  font-family: inherit;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--accent);
+  transition: opacity 0.2s;
+}
+
+.todo-add-btn:hover {
+  opacity: 0.9;
+}
+
+.todo-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.filter-btn {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.filter-btn:hover {
+  border-color: var(--accent-border);
+}
+
+.filter-btn.active {
+  background: var(--accent-bg);
+  border-color: var(--accent-border);
+  color: var(--text-h);
+  font-weight: 500;
+}
+
+.todo-toggle-all {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-toggle-all input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.todo-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.15s;
+}
+
+.todo-item:hover {
+  background: var(--accent-bg);
+}
+
+.todo-item:last-child {
+  border-bottom: none;
+}
+
+.todo-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+  padding: 14px 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.todo-label input[type='checkbox'] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--accent);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+.todo-label span {
+  word-break: break-word;
+}
+
+.todo-edit-input {
+  flex: 1;
+  padding: 6px 10px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 2px solid var(--accent-border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text-h);
+}
+
+.todo-item.done span {
+  text-decoration: line-through;
+  color: var(--text);
+  opacity: 0.6;
+}
+
+.todo-actions {
+  display: flex;
+  gap: 4px;
+  padding-right: 12px;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.todo-item:hover .todo-actions,
+.todo-item:focus-within .todo-actions {
+  opacity: 1;
+}
+
+.todo-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  font-size: 18px;
+  line-height: 1;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--text);
+  transition: background 0.15s, color 0.15s;
+}
+
+.todo-action-btn:hover {
+  background: var(--accent-bg);
+  color: var(--text-h);
+}
+
+.todo-action-btn.delete:hover {
+  background: rgba(220, 38, 38, 0.15);
+  color: #dc2626;
+}
+
+.todo-empty {
+  padding: 24px 16px;
+  text-align: center;
+  color: var(--text);
+  font-style: italic;
+}
+
+.todo-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.todo-count {
+  margin: 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.todo-clear-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  cursor: pointer;
+  background: var(--bg);
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.todo-clear-btn:hover {
+  border-color: #dc2626;
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.08);
+}
+
+@media (max-width: 480px) {
+  .todo-actions {
+    opacity: 1;
+  }
+}
