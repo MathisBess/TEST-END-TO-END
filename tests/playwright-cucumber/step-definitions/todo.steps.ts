@@ -2,15 +2,15 @@ import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from '@playwright/test';
 import { TodoWorld } from '../support/world.js';
 
-Given('que je suis sur la page d\'accueil de la Todo List', async function (this: TodoWorld) {
+Given('je suis sur la page d\'accueil de la Todo List', async function (this: TodoWorld) {
   await this.page.goto('http://localhost:5173');
 });
 
 When('je saisis {string} dans le champ d\'ajout', async function (this: TodoWorld, taskName: string) {
-  await this.page.getByPlaceholder('Que devez-vous faire ?').fill(taskName);
+  await this.page.getByLabel('Nouvelle tâche').fill(taskName);
 });
 
-When('que je valide l\'ajout de la tâche', async function (this: TodoWorld  ) {
+When('je valide l\'ajout de la tâche', async function (this: TodoWorld) {
   await this.page.keyboard.press('Enter');
 });
 
